@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$desktop-2: 1024px;
+$tablet: 768px;
+$mobile-1: 425px;
+$mobile-2: 375px;
+
+@mixin desktop-2 {
+  @media (max-width: #{$desktop-2}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile-1 {
+  @media (max-width: #{$mobile-1}) {
+    @content;
+  }
+}
+
+@mixin mobile-2 {
+  @media (max-width: #{$mobile-2}) {
+    @content;
+  }
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: hsl(226, 43%, 10%);
+
+  .card-left {
+    margin: 6rem 12rem;
+
+    @include desktop-2 {
+      margin: 3rem 2rem;
+    }
+
+    @include tablet {
+      margin: 3rem 1rem;
+    }
+
+    @include mobile-1 {
+      margin: 5rem 1rem;
+      position: relative;
+      left: 3rem;
+    }
+
+    @include mobile-2 {
+      left: 1.5rem;
+    }
+
+    .top-left {
+      background-color: hsl(246, 80%, 60%);
+      width: 20%;
+      color: #fff;
+      font-weight: 400;
+      padding: 1rem;
+      padding-bottom: 4rem;
+      border-radius: 12px;
+
+      @include mobile-1 {
+        width: 90%;
+        height: 6rem;
+      }
+
+      img {
+        width: 4rem;
+        height: 4rem;
+        border: 2px solid #fff;
+        border-radius: 50%;
+      }
+
+      h3 {
+        color: hsl(236, 100%, 87%);
+        font-weight: 300;
+        font-size: 14px;
+        margin-top: 1.5rem;
+
+        @include mobile-1 {
+          margin-top: -3.5rem;
+          margin-left: 6rem;
+        }
+      }
+
+      h1 {
+        font-weight: 300;
+        font-size: 25px;
+        margin-top: 0.3rem;
+
+        @include mobile-1 {
+          margin-left: 6rem;
+        }
+      }
+    }
+
+    .bottom-left {
+      background-color: hsl(235, 46%, 20%);
+      width: 20%;
+      border-radius: 12px;
+
+      @include mobile-1 {
+        width: 90%;
+        display: flex;
+        height: 5rem;
+      }
+
+      button {
+        padding: 1rem;
+        background-color: transparent;
+        border: none;
+        display: block;
+        color: hsl(236, 100%, 87%);
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        @include mobile-1 {
+          font-size: 18px;
+          margin-top: 1rem;
+          margin-left: 1.2rem;
+        }
+
+        @include mobile-2 {
+          margin-left: 0.8rem;
+        }
+      }
+
+      button:hover {
+        color: #fff;
+      }
+
+      .active {
+        color: #fff;
+      }
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 12px;
+    justify-items: stretch;
+    align-items: stretch;
+    width: 57%;
+    position: absolute;
+    left: 26rem;
+    top: 5.5rem;
+
+    @include desktop-2 {
+      left: 18rem;
+      top: 1.5rem;
+    }
+
+    @include tablet {
+      left: 11rem;
+      top: 3rem;
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+    }
+
+    @include mobile-1 {
+      grid-template-columns: 1fr;
+      grid-row-gap: 15px;
+      width: 83%;
+      left: 4rem;
+      top: 18rem;
+    }
+
+    @include mobile-2 {
+      left: 1.5rem;
+    }
+
+    .card {
+      background-color: hsl(235, 46%, 20%);
+      border-radius: 15px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      .work {
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: hsl(15, 100%, 70%);
+        border-radius: 12px;
+        margin: -1rem;
+        height: 1.8rem;
+      }
+
+      .top {
+        img {
+          width: 20%;
+          margin-right: 1rem;
+        }
+      }
+
+      .center {
+        margin: 2rem 0.5rem;
+        display: flex;
+
+        p {
+          color: #fff;
+        }
+
+        img {
+          width: 12%;
+          height: 15%;
+          margin-left: 7rem;
+          margin-top: 0.4rem;
+
+          @include mobile-1 {
+            margin-left: 15rem;
+          }
+        }
+      }
+
+      .big-number {
+        p {
+          font-size: 32px;
+          font-weight: 300;
+          color: #fff;
+
+          @include tablet {
+            font-size: 26px;
+          }
+        }
+      }
+
+      .bottom {
+        margin-top: 1rem;
+        p {
+          color: hsl(236, 100%, 87%);
+
+          @include tablet {
+            font-size: 13px;
+          }
+
+          @include mobile-1 {
+            margin-top: -1.5rem;
+            margin-left: 13rem;
+          }
+
+          @include mobile-2 {
+            margin-left: 12rem;
+          }
+        }
+      }
+    }
+
+    .card:hover {
+      background-color: hsl(235, 45%, 61%);
+    }
+
+    .card {
+      .play {
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: hsl(195, 74%, 62%);
+        border-radius: 12px;
+        margin: -1rem;
+        height: 1.8rem;
+      }
+    }
+
+    .card {
+      .study {
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: hsl(348, 100%, 68%);
+        border-radius: 12px;
+        margin: -1rem;
+        height: 1.8rem;
+      }
+
+      .top {
+        img {
+          width: 20%;
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    .card {
+      .exercise {
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: hsl(145, 58%, 55%);
+        border-radius: 12px;
+        margin: -1rem;
+        height: 1.8rem;
+      }
+
+      .top {
+        img {
+          width: 20%;
+          margin-right: 1rem;
+        }
+      }
+
+      #ellipsis {
+        margin-left: 5.5rem;
+
+        @include mobile-1 {
+          margin-left: 13.5rem;
+        }
+      }
+    }
+
+    .card {
+      .social {
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: hsl(264, 64%, 52%);
+        border-radius: 12px;
+        margin: -1rem;
+        height: 1.8rem;
+      }
+
+      .top {
+        img {
+          width: 20%;
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    .card {
+      .self {
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: hsl(43, 84%, 65%);
+        border-radius: 12px;
+        margin: -1rem;
+        height: 1.8rem;
+      }
+
+      .top {
+        img {
+          width: 20%;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+}
