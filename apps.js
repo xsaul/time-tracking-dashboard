@@ -15,7 +15,7 @@ function loadDataDaily() {
         data.innerHTML += `
         <div class="card">
         <div class="top work">
-          <img src="images/icon-${time.title}.svg"/>
+          <img src="images/icon-${time.title}.svg" alt="icon"/>
         </div>
         <div class="center">
         <p>${time.title}</p>
@@ -44,7 +44,7 @@ function loadDataWeekly() {
         data.innerHTML += `
         <div class="card">
         <div class="top work">
-          <img src="images/icon-${time.title}.svg"/>
+          <img src="images/icon-${time.title}.svg" alt="icon"/>
         </div>
         <div class="center">
         <p>${time.title}</p>
@@ -73,11 +73,11 @@ function loadDataMonthly() {
         data.innerHTML += `
         <div class="card">
         <div class="top work">
-          <img src="images/icon-${time.title}.svg"/>
+          <img src="images/icon-${time.title}.svg" alt="icon"/>
         </div>
         <div class="center">
         <p>${time.title}</p>
-          <img src="images/icon-ellipsis.svg"/>
+          <img src="images/icon-ellipsis.svg" alt="icon"/>
         </div>
         <div class="big-number">
         <p>${time.timeframes.monthly.current}hrs</p>
