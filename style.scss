@@ -147,13 +147,13 @@ body {
   }
 
   .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 12px;
-    justify-items: stretch;
-    align-items: stretch;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 1fr 1fr;
+    // grid-column-gap: 20px;
+    // grid-row-gap: 12px;
+    // justify-items: stretch;
+    // align-items: stretch;
     width: 57%;
     position: absolute;
     left: 26rem;
@@ -181,6 +181,14 @@ body {
 
     @include mobile-2 {
       left: 1.5rem;
+    }
+
+    .daily,
+    .weekly,
+    .monthly {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 15px;
     }
 
     .card {

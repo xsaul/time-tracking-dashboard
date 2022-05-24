@@ -142,18 +142,6 @@ body .card-left .bottom-left .active {
 }
 
 body .grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 12px;
-  justify-items: stretch;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
   width: 57%;
   position: absolute;
   left: 26rem;
@@ -191,6 +179,16 @@ body .grid {
   body .grid {
     left: 1.5rem;
   }
+}
+
+body .grid .daily,
+body .grid .weekly,
+body .grid .monthly {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
 }
 
 body .grid .card {

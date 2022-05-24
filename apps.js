@@ -2,6 +2,9 @@ const dailyBtn = document.getElementById("daily");
 const weeklyBtn = document.getElementById("weekly");
 const monthlyBtn = document.getElementById("monthly");
 const grid = document.querySelector(".grid");
+const daily = document.querySelector(".daily");
+const weekly = document.querySelector(".weekly");
+const monthly = document.querySelector(".monthly");
 
 function loadDataDaily() {
   fetch("data.json")
@@ -9,9 +12,6 @@ function loadDataDaily() {
     .then((times) => {
       times.forEach((time) => {
         const data = document.createElement("div");
-        weekly.classList.add("hide");
-        monthly.classList.add("hide");
-        data.classList.add("daily");
         data.innerHTML += `
         <div class="card">
         <div class="top work">
@@ -29,7 +29,7 @@ function loadDataDaily() {
         </div>
       </div>
         `;
-        grid.appendChild(data);
+        daily.appendChild(data);
       });
     });
   // .catch(error => console.log("There was an error:" error.message));
@@ -41,9 +41,6 @@ function loadDataWeekly() {
     .then((times) => {
       times.forEach((time) => {
         const data = document.createElement("div");
-        daily.classList.add("hide");
-        monthly.classList.add("hide");
-        data.classList.add("weekly");
         data.innerHTML += `
         <div class="card">
         <div class="top work">
@@ -61,7 +58,7 @@ function loadDataWeekly() {
         </div>
       </div>
         `;
-        grid.appendChild(data);
+        weekly.appendChild(data);
       });
     });
   // .catch(error => console.log("There was an error:" error.message));
@@ -73,9 +70,6 @@ function loadDataMonthly() {
     .then((times) => {
       times.forEach((time) => {
         const data = document.createElement("div");
-        daily.classList.add("hide");
-        weekly.classList.add("hide");
-        data.classList.add("monthly");
         data.innerHTML += `
         <div class="card">
         <div class="top work">
@@ -93,28 +87,40 @@ function loadDataMonthly() {
         </div>
       </div>
         `;
-        grid.appendChild(data);
+        monthly.appendChild(data);
       });
     });
   // .catch(error => console.log("There was an error:" error.message));
 }
 
 function showDaily() {
-  weekly.classList.add("hide");
-  monthly.classList.add("hide");
-  daily.classList.remove("hide");
+  weekly.style.display = "none";
+  monthly.style.display = "none";
+  if (daily.style.display == "grid") {
+    console.log("already displayed");
+  } else {
+    daily.style.display = "grid";
+  }
 }
 
 function showWeekly() {
-  monthly.classList.add("hide");
-  daily.classList.add("hide");
-  weekly.classList.remove("hide");
+  monthly.style.display = "none";
+  daily.style.display = "none";
+  if (weekly.style.display == "grid") {
+    console.log("already displayed");
+  } else {
+    weekly.style.display = "grid";
+  }
 }
 
 function showMonthly() {
-  weekly.classList.add("hide");
-  daily.classList.add("hide");
-  monthly.classList.remove("hide");
+  weekly.style.display = "none";
+  daily.style.display = "none";
+  if (monthly.style.display == "grid") {
+    console.log("already displayed");
+  } else {
+    monthly.style.display = "grid";
+  }
 }
 
 dailyBtn.addEventListener("click", function () {
